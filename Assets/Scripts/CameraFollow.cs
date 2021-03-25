@@ -14,6 +14,6 @@ public class CameraFollow : MonoBehaviour
 
     void Update()
     {
-        transform.position = new Vector3(target.position.x, transform.position.y, target.position.z + distance); //Vector3.MoveTowards(transform.position, new Vector3(target.position.x, transform.position.y, target.position.z + distance), Time.deltaTime * 10f);
+        transform.position = new Vector3(transform.position.x, transform.position.y, target.position.z + distance); //Vector3.MoveTowards(transform.position, new Vector3(target.position.x, transform.position.y, target.position.z + distance), Time.deltaTime * 10f);
     }
 }

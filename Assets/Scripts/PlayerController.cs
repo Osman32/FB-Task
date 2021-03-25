@@ -4,33 +4,24 @@ using UnityStandardAssets.Characters.ThirdPerson;
 
 public class PlayerController : MonoBehaviour
 {
-    public Camera cam;
-    public NavMeshAgent agent;
-    public ThirdPersonCharacter character;
+    [SerializeField] private float speed = 10f;
 
-    float x = 0;
+    private NavMeshAgent agent;
+    private ThirdPersonCharacter character;
+
+    private float x = 0;
 
     private void Start()
     {
+        agent = GetComponent<NavMeshAgent>();
+        character = GetComponent<ThirdPersonCharacter>();
+
         agent.updateRotation = false;
+        character.m_MoveSpeedMultiplier = speed / 10f;
     }
 
     void Update()
     {
-        /*
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit))
-            {
-                agent.SetDestination(hit.point);
-            }
-        }
-        */
-
         x = Mathf.MoveTowards(x, SimpleInput.GetAxis("Horizontal"), Time.deltaTime * 10f);
 
         Vector3 target = new Vector3(x, 0, 1);
