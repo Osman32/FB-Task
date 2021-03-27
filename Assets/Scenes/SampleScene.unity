@@ -417,7 +417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c76d4ffcee449c4db52675bbcc17f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyCount: 1
+  enemyCount: 5
   enemySpeed: 18
   enemyHealth: 100
   playerSpeed: 17

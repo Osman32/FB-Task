@@ -60,9 +60,10 @@ public class PlayerController : MonoBehaviour
         if (!isWin)
         {
             isWin = true;
+            GameObject.Find("TextDisplay").GetComponent<Text>().enabled = true;
             GameObject.Find("TextDisplay").GetComponent<Text>().text = "You Win!";
             FindObjectOfType<CameraFollow>().enabled = false;
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.1f);
             GetComponent<Animator>().SetBool("Win", true);
             GetComponent<Animator>().SetLayerWeight(2, 0f);
 
