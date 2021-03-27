@@ -12,7 +12,7 @@ public class CameraFollow : MonoBehaviour
         Application.targetFrameRate = 60;
     }
 
-    void Update()
+    private void Update()
     {
         transform.position = new Vector3(transform.position.x, transform.position.y, target.position.z + distance); //Vector3.MoveTowards(transform.position, new Vector3(target.position.x, transform.position.y, target.position.z + distance), Time.deltaTime * 10f);
     }
